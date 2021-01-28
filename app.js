@@ -10,12 +10,19 @@ const port = process.env.port || 3000;
 
 app.use(cors());
 
-app.get('/foundations', function(req, res, next) {
+app.get('/', function (req, res, next) {
+    res.statusCode = 200;
+    res.setHeader('Content-Type', 'application/json');
+    res.end('<h1>Hello World</h1>');
+});
+
+app.get('/foundations', function (req, res, next) {
+    res.statusCode = 200;
     res.json(data);
 });
 
 app.listen(port, () => {
-    console.log("Server is running on port: "+port);
+    console.log("Server is running on port: " + port);
 });
 
 
